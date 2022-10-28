@@ -1,5 +1,7 @@
+ Write a program to accept P, R and no of years FROM USER AND calculate SI.
 
-public class Simple_interest {
+	 
+	 public class Simple_interest {
 
 	public static void main(String[] args) {
 		float p, r,  t,  si; // principal amount, rate, time and simple interest respectively  
