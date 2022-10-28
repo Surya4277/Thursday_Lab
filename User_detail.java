@@ -1,6 +1,9 @@
-import java.util.Scanner;
+Write a program to accept your basic details (Name, No, Gmail, Address ,gender, percentage ) from user and display the output.
 
-public class User_detail {
+	
+	
+import java.util.Scanner;
+	public class User_detail {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
