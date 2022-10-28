@@ -1,6 +1,9 @@
-import java.util.Scanner;
+Write a program to accept radius from user and calculate Area of circle and circumfrances of circle.
 
-public class Radius_user {
+	
+	import java.util.Scanner;
+
+	public class Radius_user {
 
 	public static void main(String[] args) {
 		double radius, circumference, area;
