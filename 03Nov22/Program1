@@ -1,4 +1,4 @@
-Accept age and gender from user and display the rate of interest as follow
+//Accept age and gender from user and display the rate of interest as follow
 
 import java.util.Scanner;
 
