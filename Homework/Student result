@@ -1,0 +1,83 @@
+ Write a program to accept Student details from the user and calculate the result and display the output abstraction
+ 
+ import java.util.Scanner;
+
+public abstract class abs_Demo 
+{
+	int roll_no,i;
+	String name;
+	int[] marks=new int[5];
+	Scanner sc=new Scanner(System.in);
+	public abstract void calc();
+	
+	public void accept()
+	{
+		System.out.println("Enter your name");
+		name=sc.next();
+		System.out.println("Enter your roll_no");
+		roll_no=sc.nextInt();
+		System.out.println("Enter marks of five subject");
+
+		for(i=0;i<5;i++)
+		{
+			marks[i]=sc.nextInt();
+		}
+	}
+
+}
+
+//create a new interface
+public interface grade_cal {
+
+  //parameter pass
+	public void grad(int per);
+}
+
+public class HW_demo extends abs_Demo implements grade_cal {
+
+	public static void main(String[] args) {
+		
+		 // creating object for callings the function 
+		HW_demo obj=new HW_demo();
+		obj.accept();
+		obj.calc();
+	}
+
+	public void demo()
+	{
+		
+	}
+	@Override
+  // calculating percentage
+	public void calc() {
+		// TODO Auto-generated method stub
+		int total=0;
+		
+		for(i=0;i<5;i++)
+		{
+			total+=marks[i];
+		}
+		
+		System.out.println("The total out of 500 is ="+total);
+		int per=(total*100)/500;
+		grad(per);
+	}
+
+	@Override
+  // calculating grades
+	public void grad(int per) 
+	{
+		// TODO Auto-generated method stub
+		if(per<=100 &&per>=90)
+		{
+			System.out.println("A grade");
+		}
+		else
+		{
+			System.out.println("Do it by your self");
+		}
+		
+	}
+
+	
+}
