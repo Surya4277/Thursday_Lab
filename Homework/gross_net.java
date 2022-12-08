@@ -1,10 +1,13 @@
+*Write a program  to create a process which will store the employee details and calculate the employee gross salary and net salary.
+
+
 package Surya;
 
-public class gross_net extends Emp_details
+public class gross_net extends Emp_details  //new class create and extends another class 
 {
 	double BS,GS,NS,DA,HRA,PF;
 	
-	public void calc()
+	public void calc() //calculation 
 	{
 		System.out.println("Enter the basic salary");
 		BS = sc.nextDouble();
