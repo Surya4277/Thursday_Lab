@@ -1,0 +1,91 @@
+/*
+WAP to perform the following operation :
+Area of circle (π*r*r)
+Area of rectangle(l*b)
+Area of cylendar((π*r*r)*h)
+Area of Square (s*s)
+*/
+
+package Surya;
+
+import java.util.Scanner; //Svanner
+
+public class cicle_calc 
+{
+	Scanner sc=new Scanner(System.in); // for user input
+	int r,s,l,b,h;
+	float pi=3.14f;
+	float res;
+	public void area()
+	{
+		System.out.println("Enter thr value of radius R: ");
+		r=sc.nextInt();
+		res =pi*r*r;	// formula for Area of circle
+		System.out.println("The Area of circlr is = "+res);
+	}
+	
+}
+
+//create a new class
+public class square_calc extends cicle_calc
+{
+	public void area() 
+	{
+		System.out.println("Enter The value Of side of square (s): ");
+		s=sc.nextInt();
+		res=s*s;	//formula for Area of Square
+		System.out.println("The Area of Square is: "+res);
+		
+	}
+	
+}
+
+//create a new class and extends
+public class rect_calc extends cicle_calc
+{
+	public void area()
+	{
+		System.out.println("Enter the length of rectangle of (L): ");
+		l=sc.nextInt();
+		System.out.println("Enter the Breadth of rectangle (B): ");
+		b=sc.nextInt();
+		res=l*b;	//formula for Area of Rectangle
+		
+		System.out.println("The area of rectangle is: "+res);
+	}
+}
+
+//create a new class and extends
+public class cylender_calc extends cicle_calc
+{
+	public void area()
+	{
+		System.out.println("Enter the Value of radius (r): ");
+		r=sc.nextInt();
+		System.out.println("Enter the value of height (h): ");
+		h=sc.nextInt();
+		res=(pi*r*r)*h;	//formula for Area of Cylender
+		System.out.println("The Area of cylender is: "+res);
+	}
+	
+}
+
+// main class create
+public class result_of_area 
+{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		cicle_calc obj=new 		cicle_calc(); // object create 
+		cicle_calc obj1=new square_calc();
+		cicle_calc obj2=new rect_calc();
+		cicle_calc obj3=new cylender_calc();
+		obj.area();
+		obj1.area();
+		obj2.area();
+		obj3.area();
+		
+
+	}
+	
+}
