@@ -1,0 +1,97 @@
+Ques 3. Write a JAVA program which will generate the threads: - To display 10 terms of Fibonacci series. - To display 1 to 10 in reverse order.
+
+
+public class Main_Class {
+
+	// main method that create the object or another classes and calls the method
+	public static void main(String[] args) {
+		FIbonacci_Series ob = new FIbonacci_Series(); // FIbonacci_Series object creation
+		Reverse_No ob1 = new Reverse_No(); // Reverse_no class object creation
+		ob.start(); // calls run method
+		ob1.start(); // calls run method
+
+	}
+
+}
+
+
+
+//create a new class
+
+import java.util.Scanner;
+
+public class FIbonacci_Series extends Thread{
+	//global variable declaration  
+	Scanner sc = new Scanner(System.in);
+    int n1, n2,n3,i,j ,temp=0;
+	int[] arr = new int[10];
+	public void run()
+	{
+        
+        // taking the two values from user
+        System.out.print("Please enter the two value for Fibonacci Series : ");
+        n1 = sc.nextInt();
+        n2 = sc.nextInt();
+        System.out.println(" Your starting value is : "+n1+"   Your Ending value is : "+n2);  // starting value or last value
+               
+        
+        for(int i=2 ; i<10; ++i) // loop run for 10 times only
+        {
+            // adding the stating value and last value
+            n3 = n1+n2;
+            try {
+            	sleep(1000); // sleeping the thread for 1 sec
+            }catch(Exception e) {
+            	System.out.println(e);
+            }
+            System.out.print(" "+n3);
+            // interchange value
+            n1 = n2;
+            n2 = n3;
+        }
+	}
+
+}
+
+
+//create a another new class
+
+public class Reverse_No  extends FIbonacci_Series{
+	
+	// run method
+	public void run() { 
+		try{
+			sleep(10000); // sleeping run method for 10 sec
+		}catch(Exception e)
+		{
+			System.out.println(e);
+		}
+			
+		System.out.print("Enter the 10 Values here : "); // taking a 10 values from user
+		for(i=0; i<arr.length; i++)
+		{
+			arr[i] = sc.nextInt(); // taking value from user in to loop form
+		}
+		 for(i=0; i<arr.length; i++) // checking the value 
+	        {
+	            for(j=i+1; j<arr.length; j++) // which value is greater than 
+	            {
+	                if(arr[i]<arr[j]) // checking greater value here
+	                {
+	                   temp = arr[i]; // interchange the value
+	                   arr[i] = arr[j];
+	                   arr[j] = temp; 
+	                }
+	            }
+	        }
+	        
+	        // breaking the line
+	        System.out.println();
+	        for (int i = 0; i < arr.length; i++) // printing the values from decrement order 
+	         {   
+	        	 System.out.print(arr[i] + " ");
+	        		                
+	         }  
+	}
+
+}
